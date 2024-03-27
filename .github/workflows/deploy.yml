@@ -24,6 +24,12 @@ jobs:
     - name: Build
       run: npm run build
 
+    - name: AnnaKharatova/github-pages-deploy-action@v4
+      run: |
+        git config --global user.email "black-isida@yandex.ru"
+        git config --global user.name "AnnaKharatova"
+
     - name: Deploy
       run: npx gh-pages -d build
-      
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
