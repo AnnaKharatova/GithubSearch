@@ -26,6 +26,10 @@ jobs:
 
     - name: Deploy
       run: npx gh-pages -d build
+    - name: Set Git user identity
+      run: |
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
