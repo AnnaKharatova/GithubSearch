@@ -9,8 +9,8 @@ function App() {
     <>
     <Navigation />
     <Routes>
-      <Route path="/" element={<MainPage />} />
-      <Route path="/favourites" element={<FavouritesPage />} />
+      <Route path="/GithubSearch/" element={<MainPage />} />
+      <Route path="/GithubSearch/favourites" element={<FavouritesPage />} />
     </Routes>
   </>
   );

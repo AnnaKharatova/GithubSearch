@@ -1,14 +1,25 @@
-import React from "react"
+import React, { useState } from "react"
 import { IRepo } from "../models/models"
 import { useActions } from "../hooks/actions.ts"
+import { useAppSelector } from "../hooks/redux.ts"
 
 export function RepoCard({ repo }: { repo: IRepo }) {
 
-    const {addFavourite} = useActions()
+    const { addFavourite, removeFavourite } = useActions()
 
-    const addToFavourite = (event:React.MouseEvent<HTMLButtonElement>) => {
+    const { favourites } = useAppSelector(state => state.github)
+    const [isFav, setIsFav] = useState<boolean>(favourites.includes(repo.html_url))
+
+    const addToFavourite = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault()
         addFavourite(repo.html_url)
+        setIsFav(true)
+    }
+
+    const removeFromFavourite = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
+        removeFavourite(repo.html_url)
+        setIsFav(false)
     }
 
     return (
@@ -20,10 +31,18 @@ export function RepoCard({ repo }: { repo: IRepo }) {
                     Watchers: <span className="font-bold">{repo.watchers}</span>
                 </p>
                 <p className="text-sm font-thin">{repo?.description}</p>
-                <button 
-                className="py-2 px-4 bg-yellow-400 hover:shadow-md trasition-all"
-                onClick={addToFavourite}
-                >Add</button>
+                {!isFav? <button
+                    className="py-2 px-4 bg-yellow-400 hover:shadow-md trasition-all"
+                    onClick={addToFavourite}
+                >
+                    Add
+                </button> :
+                <button
+                    className="py-2 px-4 bg-red-400 hover:shadow-md trasition-all"
+                    onClick={removeFromFavourite}
+                >
+                    Remove
+                </button>}
             </a>
         </div>
     )
