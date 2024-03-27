@@ -1,4 +1,4 @@
-# Проект: Gitnub Search
+# Проект: Github Search
 
 * [Ссылка на Frontend](https://annakharatova.github.io/GithubSearch/)
 

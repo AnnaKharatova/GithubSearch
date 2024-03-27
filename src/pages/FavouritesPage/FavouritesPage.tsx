@@ -5,7 +5,7 @@ export function FavouritesPage() {
 
     const { favourites } = useAppSelector(state => state.github)
 
-    if (favourites.length === 0) return <p className='text-center'>В избранном ничего нет</p>
+    if (favourites.length === 0) return <p className='text-center mt-10'>В избранном ничего нет</p>
 
     return (
         <div className='flex justify-center pt-10 mx-auto h-screen w-screen'>
