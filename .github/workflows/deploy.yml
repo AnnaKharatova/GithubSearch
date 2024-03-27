@@ -28,7 +28,7 @@ jobs:
       run: npx gh-pages -d build
     - name: Set Git user identity
       run: |
-        git config --global user.email "annakharatova@yandex.ru"
+        git config --global user.email "black-isida@yandex.ru"
         git config --global user.name "AnnaKharatova"
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
