@@ -26,3 +26,4 @@ jobs:
 
     - name: Deploy
       run: npx gh-pages -d build
+      
