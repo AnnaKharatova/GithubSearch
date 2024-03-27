@@ -12,7 +12,7 @@ export function FavouritesPage() {
             <ul className='list-none'>
                 {favourites.map(f => (
                     <li key={f}>
-                        <a href={f} target='_blank'>{f}</a>
+                        <a href={f} target='_blank' rel="noreferrer">{f}</a>
                     </li>
                 ))}
             </ul>
