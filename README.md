@@ -1,6 +1,6 @@
 # Проект: Gitnub Search
 
-* [Ссылка на Frontend]()
+* [Ссылка на Frontend](https://annakharatova.github.io/GithubSearch/)
 
 ## Технологии
 ![React](https://img.shields.io/badge/-React-61daf8?logo=react&logoColor=black)
